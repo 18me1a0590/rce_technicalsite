@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+    <title>Results</title>
+</head>
+<body>
+  <div class="container" id="box">
+    
+    <div class="row well">
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Searched Result for : <strong> {{roll}}</strong></span>
+          </nav><br><br>
+        <table class="table">
+          {%if flag==0%}
+        <h1 >Entered number is invalid check the Roll Number</h1>
+        {%else%}
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">SUB CODE</th>
+                <th scope="col">SUBJECT</th>
+                <th scope="col">GRADE</th>
+                <th scope="col">CREDITS</th>
+              </tr>
+            </thead>
+            <tbody>
+               
+       
+        {% for subcode, sub, grade, credit in mylist %}
+        
+                <tr>
+                <th scope="row">{{subcode}}</th>
+                <td>{{sub}}</td>
+                <td>{{grade}}</td>
+                <td>{{credit}}</td>
+                </tr>
+              
+        {% endfor %}
+        {%endif%}
+    
+</tbody>
+</table>
+<center>
+  <button class="btn btn-primary hidden-print" onclick="myFunction()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+</center>
+
+    </div>
+    </div>
+  </div>
+
+  <script>function myFunction() {
+    window.print();
+}</script>
+
+    
+     
+
+    
+    
+</body>
+</html>
